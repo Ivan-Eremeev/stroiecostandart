@@ -1,0 +1,103 @@
+/* Media */
+// Малые девайсы («ландшафтные телефоны», >= 576px)
+@media (min-width: 576px) {
+	html {
+		font-size: 18px;
+	}
+	h2 {
+		font-size: 2.4rem;
+	}
+	.face_h1 {
+		font-size: 2.72rem;
+	}
+	.face_li {
+		font-size: 1.6rem;
+	}
+	.form_top-text {
+		font-size: 2.38rem;
+	}
+	.stroi {
+		font-size: 25px;
+	}
+	.team_bg {
+		font-size: 7.72rem;
+	}
+	.contact {
+		padding: 90px 60px;
+	}
+	.footer h2 {
+		font-size: 2.72rem;
+	}
+}
+
+// Средние девайсы («таблетки», >= 768px)
+@media (min-width: 768px) {
+	.face {
+		padding-top: 240px;
+		h1 {
+			margin-bottom: 60px;
+		}
+	}
+	.header_top {
+		display: block;
+	}
+	.row-hidden {
+		display: none;
+	}
+	.menu_ul {
+		display: flex;
+	}
+	.face {
+		padding-top: 170px;
+	}
+	.menu a {
+		font-size: 1rem;
+	}
+	.form--blue {
+		padding: 100px 80px 60px 80px;
+	}
+	.form--blue:after {
+		display: block;
+	}
+	.carousel-section .customPrevBtn, .carousel-section .customNextBtn {
+		background-color: rgba(82,85,98,.7);
+	}
+	.calc_col {
+    	padding: 60px 50px;
+    }
+	.calc_col:after {
+		display: flex;
+	}
+	.documents .hide {
+		display: flex;
+	}
+	.footer {
+		padding: 90px 60px;
+	}
+}
+
+// Большие девайсы (десктопы, >= 992px)
+@media (min-width: 992px) {
+	.face_h1 span {
+		white-space: nowrap;
+	}
+	.form {
+		margin-top: 120px;
+		&--blue {
+			margin: 0;
+		}
+	}
+	.team_item {
+		margin-bottom: 0;
+	}
+	.btn--margin {
+		margin-bottom: 0;
+	}
+}
+
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+@media (min-width: 1200px) {
+	.header_top {
+		text-align: right;
+	}
+}

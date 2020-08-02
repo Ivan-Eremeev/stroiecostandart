@@ -1,0 +1,87 @@
+// Клирфикс для флоат
+@mixin clfx {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+// Border
+@mixin bd ($color) {
+	border: 1px solid $color;
+}
+
+// Margin auto
+@mixin ma {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Псевдо элементы
+@mixin pseudo( $content: '', $display: block, $pos: absolute){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Сохранение пропорций для фоновой картинки
+@mixin ratio ($x, $y) {
+	$padding: unquote( ( $y / $x ) * 100 + '%' );
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		padding-top: $padding;
+	}
+}
+
+// Треугольники
+@mixin triangle($size, $color, $direction, $round: false){
+  @include pseudo;
+  width: 0;
+  height: 0;
+  @if $round {
+    border-radius: $round;
+  }
+  @if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: 0 - round( $size / 2.5 );
+  } @else if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round( $size / 2.5 );
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
+}
+
+// Стили шрифта
+@mixin font($size: false, $colour: false, $weight: false, $style: false, $lh: false) {
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $style { font-style: $style;}
+  @if $lh { line-height: $lh; }
+}
+
+// Placeholder
+@mixin placeholder {
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
